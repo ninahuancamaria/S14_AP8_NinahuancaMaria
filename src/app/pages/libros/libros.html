@@ -1,0 +1,28 @@
+@if (categoriaActual) {
+  <h2>Libros de {{ categoriaActual | titlecase }}</h2>
+  <p style="text-align: center; margin-bottom: 20px;">
+    <a routerLink="/categorias" style="color: #a855f7; text-decoration: none; font-weight: bold;">&larr; Volver a Categorías</a>
+  </p>
+} @else {
+  <h2>Catálogo de Libros</h2>
+  <p style="text-align: center; max-width: 600px; margin: 0 auto; margin-bottom: 20px;">
+    Explora nuestra selección completa de libros más populares. Sumérgete en historias fascinantes y descubre nuevos mundos.
+  </p>
+}
+
+<div class="card-grid">
+  @for (libro of librosMostrados; track libro.titulo) {
+    <div class="glass-card">
+      <span>{{ libro.categoriaNombre }}</span>
+      <h3>{{ libro.titulo }}</h3>
+      <p>{{ libro.autor }}</p>
+      <button class="btn">Leer ahora</button>
+    </div>
+  }
+  
+  @if (librosMostrados.length === 0) {
+    <div style="text-align: center; grid-column: 1 / -1; padding: 40px;">
+      <p>No se encontraron libros para esta categoría.</p>
+    </div>
+  }
+</div>
