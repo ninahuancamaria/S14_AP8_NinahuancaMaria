@@ -1,8 +1,9 @@
-<nav>
+<nav *ngIf="authService.isLoggedIn()">
   <a routerLink="/">Inicio</a>
   <a routerLink="/libros">Libros</a>
   <a routerLink="/categorias">Categorías</a>
   <a routerLink="/contacto">Contacto</a>
+  <button (click)="logout()" class="logout-btn">Cerrar Sesión</button>
 </nav>
 
 <div class="contenido">

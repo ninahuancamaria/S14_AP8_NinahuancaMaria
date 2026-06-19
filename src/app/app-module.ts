@@ -7,10 +7,12 @@ import { Home } from './pages/home/home';
 import { Libros } from './pages/libros/libros';
 import { Categorias } from './pages/categorias/categorias';
 import { Contacto } from './pages/contacto/contacto';
+import { ReactiveFormsModule } from '@angular/forms';
+import { Login } from './pages/login/login';
 
 @NgModule({
-  declarations: [App, Home, Libros, Categorias, Contacto],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [App, Home, Libros, Categorias, Contacto, Login],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [App],
 })
